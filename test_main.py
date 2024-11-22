@@ -1,6 +1,7 @@
 import pytest
 from sqlalchemy.exc import IntegrityError
-from main import User, Profile, db, create_app
+
+from main import Profile, User, create_app, db
 
 
 @pytest.fixture

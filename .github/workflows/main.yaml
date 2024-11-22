@@ -12,7 +12,27 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v3
     - uses: pre-commit/action@v3.0.1
-    - name: Run Unit Tests
+
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v3
+    - name: Install dependencies
       run: |
-        pip install pytest
-        pytest tests/
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Run unit tests
+      run: pytest
+
+  code-coverage:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v3
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Run code coverage script
+      run: python coverage_script.py
