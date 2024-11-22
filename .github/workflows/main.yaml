@@ -3,7 +3,7 @@ name: pre-commit
 on:
   pull_request:
   push:
-    branches: [master]
+    branches: [main]
 
 jobs:
   pre-commit:
@@ -34,5 +34,5 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Run code coverage
+    - name: Run code coverage script
       run: python coverage_script.py
