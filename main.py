@@ -1,8 +1,11 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
-from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user
-from werkzeug.utils import secure_filename
 import os
+
+from flask import (Flask, flash, jsonify, redirect, render_template, request,
+                   url_for)
+from flask_login import (LoginManager, UserMixin, login_required, login_user,
+                         logout_user)
+from flask_sqlalchemy import SQLAlchemy
+from werkzeug.utils import secure_filename
 
 db = SQLAlchemy()  # Initialize SQLAlchemy globally
 login_manager = LoginManager()  # Initialize Flask-Login globally
